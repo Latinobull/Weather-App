@@ -3,30 +3,47 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotronStyle">
       <div class="container">
         <h1 class="display-4 text-center">Weather Dashboard</h1>
       </div>
     </div>
-    
-    <label class="col-12 col-form-label"><h3>Search by City</h3></label> 
-      <form class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
-          <label for="inputPassword2" class="sr-only">Password</label>
-          <input type="text" class="form-control" id="inputPassword2" placeholder="City">
+    <div>
+      <div class="row">
+        <form class="col-2 form-inline formStyle">
+          <label class=""><h3>Search by City</h3></label>
+          <div class="form-group mx-sm-3 mb-2">
+            <input
+              type="text"
+              class="form-control"
+              id="inputPassword2"
+              placeholder="City"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-primary mb-2">P</button>
+        </form>
+        <div class="col-7 displayStyle">
+          <h1>City:</h1>
+          <h4>Temperature:</h4>
+          <h4>Humidity:</h4>
+          <h4>Wind Speed:</h4>
+          <h4>UV Index:</h4>
         </div>
-        <button type="submit" class="btn btn-primary mb-2">Photo holder</button>
-        <ul class="list-group  col-12">
-            <li class="list-group-item listStyle ">Cras justo odio</li>
-          </ul>
+      </div>
+    </div>
+
+    <ul class="list-group col-12">
+      <li class="list-group-item listStyle">Cras justo odio</li>
+    </ul>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
