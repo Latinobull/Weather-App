@@ -1,6 +1,6 @@
 .listStyle {
   margin-right: 1px;
-  margin-right: 1095px;
+  margin-right: 100px;
 }
 
 .displayStyle {
@@ -11,4 +11,11 @@
 .jumbotronStyle {
   background-color: rgb(36, 35, 35);
   color: white;
+}
+.cardStyle {
+  float: right;
+  height: 200px;
+  width: 200px;
+  margin: auto;
+  margin-right: 25px;
 }
