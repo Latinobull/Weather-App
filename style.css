@@ -1,12 +1,12 @@
 .listStyle {
   margin-right: 1px;
-  margin-right: 1600px;
+  margin-right: 1095px;
 }
 
 .displayStyle {
   float: right;
   border: 1px solid lightgrey;
-  margin-left: 80px;
+  margin-left: 180px;
 }
 .jumbotronStyle {
   background-color: rgb(36, 35, 35);
