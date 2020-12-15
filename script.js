@@ -10,20 +10,26 @@ $("#submitBtn").on("click", function(event) {
     event.preventDefault()
    
     var city = $("#citySearch").val()
-    console.log(city)
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=348a03864c53988b715b0daea933a0ef";
 
     $.ajax({
         url: queryURL,
         method: "GET"
       }).then(function(response) {
-        console.log(response);
-        console.log(response.name)
         $("#cityAPI").text(JSON.stringify(response.name))
         $("#tempAPI").text(JSON.stringify(response.main.temp))
         $("#humiAPI").text(JSON.stringify(response.main.humidity))
         $("#windAPI").text(JSON.stringify(response.wind.speed))
       });
 
+      var query5URL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=348a03864c53988b715b0daea933a0ef"
+
+      $.ajax({
+          url: query5URL,
+          method: "GET"
+      }).then(function(response5) {
+        console.log(response5.list[0])
+        $("#").text(JSON.stringify(response5.list[0].main.temp))
+      })
 })
 // functions to link to page
