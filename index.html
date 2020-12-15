@@ -20,85 +20,108 @@
         <h1 class="display-4 text-center">Weather Dashboard</h1>
       </div>
     </div>
-    <div>
-      <div class="row">
-        <form class="col-2 form-inline formStyle">
-          <label class="mx-2"><h3>Search by City</h3></label>
-          <div class="form-group mx-sm-3 mb-2">
-            <input
-              type="text"
-              class="form-control"
-              id="inputPassword2"
-              placeholder="City"
-            />
-            <button type="submit" class="btn btn-primary mb-2" id="submitBtn">
-              <i class="fa fa-search"></i>
-            </button>
+    <div class="container">
+      <div>
+        <div class="row">
+          <form class="col-2 form-inline formStyle">
+            <label class="mx-2"><h3>Search by City</h3></label>
+            <div class="form-group mx-sm-3 mb-2">
+              <input
+                type="text"
+                class="form-control"
+                id="inputPassword2"
+                placeholder="City"
+              />
+              <button type="submit" class="btn btn-primary mb-2" id="submitBtn">
+                <i class="fa fa-search"></i>
+              </button>
+            </div>
+          </form>
+          <div class="col-7 displayStyle">
+            <h1 id="cityAPI">City:</h1>
+            <h4 id="tempAPI">Temperature:</h4>
+            <h4 id="humiAPI">Humidity:</h4>
+            <h4 id="windAPI">Wind Speed:</h4>
+            <h4 id="uvAPI">UV Index:</h4>
           </div>
-        </form>
-        <div class="col-7 displayStyle">
-          <h1 id="cityAPI">City:</h1>
-          <h4 id="tempAPI">Temperature:</h4>
-          <h4 id="humiAPI">Humidity:</h4>
-          <h4 id="windAPI">Wind Speed:</h4>
-          <h4 id="uvAPI">UV Index:</h4>
         </div>
       </div>
-    </div>
+      <div class="row">
+        <ul class="list-group col-3">
+          <li class="list-group-item listStyle" id="prevCity">
+            Cras justo odio
+          </li>
+          <li class="list-group-item listStyle" id="prevCity">
+            Cras justo odio
+          </li>
+          <li class="list-group-item listStyle" id="prevCity">
+            Cras justo odio
+          </li>
+          <li class="list-group-item listStyle" id="prevCity">
+            Cras justo odio
+          </li>
+          <li class="list-group-item listStyle" id="prevCity">
+            Cras justo odio
+          </li>
+          <li class="list-group-item listStyle" id="prevCity">
+            Cras justo odio
+          </li>
+        </ul>
 
-    <ul class="list-group col-3">
-      <li class="list-group-item listStyle" id="prevCity">Cras justo odio</li>
-    </ul>
+        <div class="col-7">
+          <h3 class="dayStyle">5-Day Forecast</h3>
+          <div class="row">
+            <div class="card bg-primary cardStyle float-right">
+              <div class="card-body">
+                <h5 class="card-title">Special title treatment</h5>
+                <p class="card-text">
+                  With supporting text below as a natural lead-in to additional
+                  content.
+                </p>
+              </div>
+            </div>
+            <div>
+              <div class="card bg-primary cardStyle float-right">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                </div>
+              </div>
 
-    <div>
-      <h3 class="dayStyle">5-Day Forecast</h3>
-      <div class="card col-7 bg-primary cardStyle">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-        </div>
-      </div>
+              <div class="card bg-primary cardStyle float-right">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                </div>
+              </div>
 
-      <div class="card col-7 bg-primary cardStyle">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-        </div>
-      </div>
+              <div class="card bg-primary cardStyle float-right">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                </div>
+              </div>
 
-      <div class="card col-7 bg-primary cardStyle">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-        </div>
-      </div>
-
-      <div class="card col-7 bg-primary cardStyle">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
-        </div>
-      </div>
-
-      <div class="card col-7 bg-primary cardStyle">
-        <div class="card-body">
-          <h5 class="card-title">Special title treatment</h5>
-          <p class="card-text">
-            With supporting text below as a natural lead-in to additional
-            content.
-          </p>
+              <div class="card bg-primary cardStyle float-right">
+                <div class="card-body">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <p class="card-text">
+                    With supporting text below as a natural lead-in to
+                    additional content.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

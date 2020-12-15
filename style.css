@@ -13,12 +13,6 @@
   color: white;
 }
 .cardStyle {
-  float: right;
   height: 200px;
-  width: 200px;
-  margin: auto;
-  margin-right: 25px;
-}
-.dayStyle {
-  margin-left: 400px;
+  width: 150px;
 }
