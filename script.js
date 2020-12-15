@@ -29,7 +29,9 @@ $("#submitBtn").on("click", function(event) {
           method: "GET"
       }).then(function(response5) {
         console.log(response5.list[0])
-        $("#").text(JSON.stringify(response5.list[0].main.temp))
+        $("#temp1").text(JSON.stringify(response5.list[0].main.temp))
+        $("#humi1").text(JSON.stringify(response5.list[0].main.humidity))
+        $("icon1").text(JSON.stringify(response5.list[0].weather[0].icon))
       })
 })
 // functions to link to page
