@@ -1,11 +1,11 @@
 // variables that will be needed
-
+var fahrenheitCal = 273.15 * 9 / 5 + 32
 
 //API information
 
 
 
-//submit button & AJAX CALL
+//submit button & AJAX CALLs
 $("#submitBtn").on("click", function(event) {
     event.preventDefault()
    
@@ -18,6 +18,11 @@ $("#submitBtn").on("click", function(event) {
         method: "GET"
       }).then(function(response) {
         console.log(response);
+        console.log(response.name)
+        $("#cityAPI").text(JSON.stringify(response.name))
+        $("#tempAPI").text(JSON.stringify(response.main.temp))
+        $("#humiAPI").text(JSON.stringify(response.main.humidity))
+        $("#windAPI").text(JSON.stringify(response.wind.speed))
       });
 
 })
