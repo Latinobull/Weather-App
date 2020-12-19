@@ -3,6 +3,8 @@ var lon = ""
 var lat = ""
 var apiKey = "348a03864c53988b715b0daea933a0ef"
 uvIndexEl = $("#uvAPI")
+var cityStorage = window.localstorage
+var cityList = []
 //fahrenheitCal = (x - 273.15) * 9 / 5 +32
 //API information
 
@@ -77,7 +79,25 @@ $("#submitBtn").on("click", function(event) {
         $("#humi5").text(JSON.stringify(response5.list[8].main.humidity))
         $("icon5").append(JSON.stringify(response5.list[8].weather[0].icon))
       })
-
-
 })
+function localSearch() {
+  if (cityStorage.getItem("pastWeatherCities") != undefined) {
+    cityList = JSON.parse(cityStorage.getItem("pastWeatherCities"))
+    for (var i = 0; i < cityList.length; i++) {
+      var recentCity = $("<li>")
+      recentCity.text(cityList[i])
+      recentCity.attr("data-city", cityList[i])
+      $("#prevCity").preprend(recentCity)
+
+      cityList.push($("#citysearch").val())
+    }
+  }
+}
+localSearch()
+
+function savePastSearches() {
+  cityStorage.setItem("pastWeatherCities", JSON.stringify(cityList))
+}
+
+savePastSearches
 // functions to link to page
