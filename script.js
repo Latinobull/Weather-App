@@ -1,4 +1,7 @@
 // variables that will be needed  
+var lon = ""
+var lat = ""
+var apiKey = "348a03864c53988b715b0daea933a0ef"
 //fahrenheitCal = (x - 273.15) * 9 / 5 +32
 //API information
 
@@ -8,7 +11,7 @@ $("#submitBtn").on("click", function(event) {
     event.preventDefault()
    
     var city = $("#citySearch").val()
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=348a03864c53988b715b0daea933a0ef";
+    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
     $.ajax({
         url: queryURL,
@@ -18,10 +21,18 @@ $("#submitBtn").on("click", function(event) {
         $("#tempAPI").text(JSON.stringify((~~response.main.temp - 273) * 9 / 5 + 32))
         $("#humiAPI").text(JSON.stringify(response.main.humidity))
         $("#windAPI").text(JSON.stringify(response.wind.speed))
-        console.log(response.main.temp)
+        console.log(response)
+        lon = response.coord.lon
+        lat = response.coord.lat
+        $.ajax({
+          url: "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey,
+          method: "GET"
+        }).then(function(uvIndex) {
+          $("#uvAPI").text(JSON.stringify(uvIndex.value))
+        })
       });
 
-      var query5URL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=348a03864c53988b715b0daea933a0ef"
+      var query5URL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey
 
       $.ajax({
           url: query5URL,
@@ -53,5 +64,7 @@ $("#submitBtn").on("click", function(event) {
         $("#humi5").text(JSON.stringify(response5.list[8].main.humidity))
         $("icon5").append(JSON.stringify(response5.list[8].weather[0].icon))
       })
+
+
 })
 // functions to link to page
