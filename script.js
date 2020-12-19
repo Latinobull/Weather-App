@@ -80,24 +80,24 @@ $("#submitBtn").on("click", function(event) {
         $("icon5").append(JSON.stringify(response5.list[8].weather[0].icon))
       })
 })
-function localSearch() {
-  if (cityStorage.getItem("pastWeatherCities") != undefined) {
-    cityList = JSON.parse(cityStorage.getItem("pastWeatherCities"))
-    for (var i = 0; i < cityList.length; i++) {
-      var recentCity = $("<li>")
-      recentCity.text(cityList[i])
-      recentCity.attr("data-city", cityList[i])
-      $("#prevCity").preprend(recentCity)
+// function localSearch() {
+//   if (cityStorage.getItem("pastWeatherCities") != undefined) {
+//     cityList = JSON.parse(cityStorage.getItem("pastWeatherCities"))
+//     for (var i = 0; i < cityList.length; i++) {
+//       var recentCity = $("<li>")
+//       recentCity.text(cityList[i])
+//       recentCity.attr("data-city", cityList[i])
+//       $("#prevCity").preprend(recentCity)
 
-      cityList.push($("#citysearch").val())
-    }
-  }
-}
-localSearch()
+//       cityList.push($("#citysearch").val())
+//     }
+//   }
+// }
+// localSearch()
 
-function savePastSearches() {
-  cityStorage.setItem("pastWeatherCities", JSON.stringify(cityList))
-}
+// function savePastSearches() {
+//   cityStorage.setItem("pastWeatherCities", JSON.stringify(cityList))
+// }
 
-savePastSearches
+// savePastSearches
 // functions to link to page
