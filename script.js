@@ -15,7 +15,7 @@ $("#submitBtn").on("click", function(event) {
         method: "GET"
       }).then(function(response) {
         $("#cityAPI").text(JSON.stringify(response.name))
-        $("#tempAPI").text(JSON.stringify((response.main.temp - 273) * 9 / 5 + 32))
+        $("#tempAPI").text(JSON.stringify((~~response.main.temp - 273) * 9 / 5 + 32))
         $("#humiAPI").text(JSON.stringify(response.main.humidity))
         $("#windAPI").text(JSON.stringify(response.wind.speed))
         console.log(response.main.temp)

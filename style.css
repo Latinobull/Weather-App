@@ -16,3 +16,12 @@
   height: 200px;
   width: 150px;
 }
+
+p {
+  color: white;
+  font-size: 15px;
+}
+h5 {
+  color: white;
+  font-size: 20px;
+}
