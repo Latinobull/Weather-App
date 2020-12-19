@@ -2,6 +2,7 @@
 var lon = ""
 var lat = ""
 var apiKey = "348a03864c53988b715b0daea933a0ef"
+uvIndexEl = $("#uvAPI")
 //fahrenheitCal = (x - 273.15) * 9 / 5 +32
 //API information
 
@@ -28,7 +29,19 @@ $("#submitBtn").on("click", function(event) {
           url: "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey,
           method: "GET"
         }).then(function(uvIndex) {
-          $("#uvAPI").text(JSON.stringify(uvIndex.value))
+          var uvValue = uvIndex.value
+          uvIndexEl.text(JSON.stringify(uvValue))
+
+          if (uvIndex.value <= 2) {
+            uvIndexEl.css("background-color", "lightgreen")
+          }else if (uvValue >=3 && uvValue <= 5 ) {
+            uvIndexEl.css("background-color", "yellow")
+          }else if (uvValue >=6 && uvValue <=8) {
+            uvIndexEl.css("background-color", "orange")
+          }else if (uvValue <8) {
+            uvIndexEl.css("backgorund-color", "red")
+          }
+
         })
       });
 
