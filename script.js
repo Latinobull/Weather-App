@@ -14,7 +14,7 @@ $("#submitBtn").on("click", function(event) {
     event.preventDefault()
    
     var city = $("#citySearch").val()
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
     cityList.push(city)
     for (var i = 0; i < cityList.length; i++) {
@@ -42,7 +42,7 @@ $("#submitBtn").on("click", function(event) {
         lon = response.coord.lon
         lat = response.coord.lat
         $.ajax({
-          url: "http://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey,
+          url: "https://api.openweathermap.org/data/2.5/uvi?lat=" + lat + "&lon=" + lon + "&appid=" + apiKey,
           method: "GET"
         }).then(function(uvIndex) {
           var uvValue = uvIndex.value
@@ -64,7 +64,7 @@ $("#submitBtn").on("click", function(event) {
         })
       });
 
-      var query5URL = "http://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey
+      var query5URL = "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&appid=" + apiKey
 
       $.ajax({
           url: query5URL,
