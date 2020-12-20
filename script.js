@@ -20,7 +20,7 @@ $("#submitBtn").on("click", function(event) {
     for (var i = 0; i < cityList.length; i++) {
       if (cityStorage !== "undefined") {
         localStorage.setItem("previousCity", cityList[i])
-        $("<li>").cityStorage.getItem( "previousCity",cityList[i])
+        // $("<li>").cityStorage.getItem( "previousCity",cityList[i])
         
       //         var recentCity = $("<li>")
       // recentCity.text(cityList[i])
@@ -57,6 +57,8 @@ $("#submitBtn").on("click", function(event) {
             uvIndexEl.css("background-color", "orange")
           }else if (uvValue >=8 && uvValue <=10 ) {
             uvIndexEl.css("backgorund-color", "red")
+          }else if (uvValue >=11) {
+            uvIndexEl.css("background-color", "darkred")
           }
 
         })
