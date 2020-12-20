@@ -16,6 +16,20 @@ $("#submitBtn").on("click", function(event) {
     var city = $("#citySearch").val()
     var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey;
 
+    cityList.push(city)
+    for (var i = 0; i < cityList.length; i++) {
+      if (cityStorage !== "undefined") {
+        localStorage.setItem("previousCity", cityList[i])
+        $("<li>").cityStorage.getItem( "previousCity",cityList[i])
+        
+      //         var recentCity = $("<li>")
+      // recentCity.text(cityList[i])
+      // recentCity.attr("data-city", cityList[i])
+      // $("#prevCity").preprend(recentCity)
+    }
+
+    }
+    console.log(cityList)
     $.ajax({
         url: queryURL,
         method: "GET"
@@ -33,6 +47,7 @@ $("#submitBtn").on("click", function(event) {
         }).then(function(uvIndex) {
           var uvValue = uvIndex.value
           uvIndexEl.text(JSON.stringify(uvValue))
+          console.log(uvValue)
 
           if (uvIndex.value <= 2) {
             uvIndexEl.css("background-color", "lightgreen")
@@ -40,7 +55,7 @@ $("#submitBtn").on("click", function(event) {
             uvIndexEl.css("background-color", "yellow")
           }else if (uvValue >=6 && uvValue <=8) {
             uvIndexEl.css("background-color", "orange")
-          }else if (uvValue <8) {
+          }else if (uvValue >=8 && uvValue <=10 ) {
             uvIndexEl.css("backgorund-color", "red")
           }
 
@@ -89,7 +104,7 @@ $("#submitBtn").on("click", function(event) {
 //       recentCity.attr("data-city", cityList[i])
 //       $("#prevCity").preprend(recentCity)
 
-//       cityList.push($("#citysearch").val())
+// 
 //     }
 //   }
 // }
